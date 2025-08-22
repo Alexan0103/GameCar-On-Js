@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Car Racing</title>
+</head>
+<body>
+<div class="road">
+  <div class="road-line">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+</div>
+
+<div class="car"></div>
+
+<div class="tree tree1"></div>
+<div class="tree tree2"></div>
+<div class="tree tree3"></div>
+<div class="tree tree4"></div>
+<div class="tree tree5"></div>
+<div class="tree tree6"></div>
+
+<div class="arrow"></div>
+<div class="danger"></div>
+<div class="coin"></div>
+
+<div class="buttons">
+  <div class="score">
+    <p>Money:</p>
+    <div class="game-score">
+      0
+    </div>
+  </div>
+  <button class="game-button" type="button">
+    <img class="pause" src="images/pause.png" alt="" >
+    <img class="play" src="images/play.png" alt="">
+  </button>
+</div>
+<div class="backdrop">
+  <div class="backdrop-container">
+    <p class="finish-text">Итоговый счет:
+      <span class="finish-text-score">0</span></p>
+    <button
+      class="restart-button"
+      type="button"
+    >
+      Начать заново
+    </button>
+  </div>
+</div>
+
+<script src="scripts/utils.js"></script>
+<script src="scripts/constants.js"></script>
+<script src="scripts/animation.js"></script>
+<script src="scripts/movement.js"></script>
+<script src="scripts/game.js"></script>
+</body>
+</html>

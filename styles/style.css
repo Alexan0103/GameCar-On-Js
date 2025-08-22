@@ -1,0 +1,468 @@
+* {
+  -webkit-user-select: none; /* iOS Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* стандарт */
+  -webkit-touch-callout: none; /* убирает меню "Сохранить картинку" на iOS */
+  -webkit-text-size-adjust: 100%;
+}
+
+button {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  background: #567120;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.car {
+  position: absolute;
+  transform: translateY(75vh);
+  z-index: 50;
+  width: 80px;
+  height: 150px;
+  background: url("../images/car.webp") no-repeat center/contain;
+}
+
+.road {
+  flex-direction: row;
+  width: 500px;
+  height: 100vh;
+  background: #9c999c;
+
+}
+
+.road-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 40px;
+
+}
+
+.line {
+  width: 15px;
+  height: 100px;
+  background-color: white;
+}
+
+.tree {
+  position: absolute;
+  z-index: 10;
+}
+
+.tree2 {
+  width: 230px;
+  height: 200px;
+  transform: translate(-300px, 30vh);
+  background: url("../images/tree2.webp") no-repeat center/contain;
+
+}
+
+.tree1 {
+  width: 200px;
+  height: 200px;
+  background: url("../images/tree3.webp") no-repeat center/contain;
+  transform: translate(-290px, -15vh);
+}
+
+.tree4 {
+  width: 240px;
+  height: 200px;
+  transform: translate(290px, -5vh);
+  background: url("../images/tree1.webp") no-repeat center/contain;
+}
+
+.tree3 {
+  width: 280px;
+  height: 200px;
+  transform: translate(-305px, 70vh);
+  background: url("../images/tree1.webp") no-repeat center/contain;
+
+}
+
+.tree5 {
+  width: 270px;
+  height: 200px;
+  transform: translate(300px, 40vh);
+  background: url("../images/tree3.webp") no-repeat center/contain;
+}
+
+.tree6 {
+  width: 250px;
+  height: 200px;
+  transform: translate(305px, 80vh);
+  background: url("../images/tree2.webp") no-repeat center/contain;
+}
+
+.buttons {
+  position: absolute;
+  width: 250px;
+  height: 150px;
+  background: rgb(58, 26, 37);
+  left: 2%;
+  top: 25%;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.score p {
+  font-size: 30px;
+  color: white;
+  margin-block: 0;
+  margin-right: 10px;
+}
+
+.game-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e84112;
+  color: white;
+  width: 100px;
+  height: 35px;
+  z-index: 15;
+  font-size: 20px;
+  align-self: start;
+  flex-direction: column;
+  border-radius: 4px;
+}
+
+.game-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  z-index: 20;
+  align-self: end;
+  position: absolute;
+  top: 55%;
+  left: 70%;
+
+}
+
+.score {
+  display: flex;
+}
+
+.backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 50;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop-container {
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  background-color: white;
+}
+
+.finish-text {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  text-wrap: nowrap;
+}
+
+.finish-text::before,
+.finish-text::after {
+  content: '👾';
+  display: block;
+  margin-left: 10px;
+  font-size: 35px;
+  animation: ease .3s jump infinite;
+  animation-direction: alternate;
+}
+
+.finish-text::before {
+  animation-delay: .1s;
+  margin-right: 10px;
+}
+
+.finish-text span {
+  margin-left: 10px;
+  color: rgb(142, 12, 83);
+  font-size: 25px;
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.restart-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: rgb(142, 12, 83);
+  font-size: 20px;
+  padding: 8px 25px;
+  font-family: Helvetica, sans-serif;
+}
+
+.restart-button:hover {
+  background: rgb(177, 14, 104);
+}
+
+.game-button .play {
+  display: none;
+}
+
+
+.game-button:hover {
+  transform: scale(1.2);
+}
+
+.danger {
+  transform: translate(-100px, -250px);
+  position: absolute;
+  width: 100px;
+  height: 35px;
+  background: url("../images/danger.webp") no-repeat center/contain;
+}
+
+.arrow {
+  width: 80px;
+  height: 100px;
+  transform: translate(10px, -600px);
+  position: absolute;
+  background: url("../images/arrow.webp") no-repeat center/contain;
+
+}
+
+.coin {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: translate(50px, -100px);
+  background: url("../images/coin.webp") no-repeat center/contain;
+}
+
+.container {
+  position: absolute;
+  top: 25%;
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.box {
+  justify-content: center;
+  row-gap: 100px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 400px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.h1 {
+  display: flex;
+  margin: 0;
+  font-size: 37px;
+}
+
+.h1::before,
+.h1::after {
+  content: '🏎️';
+  display: block;
+  font-size: 35px;
+  animation: ease .3s jump infinite;
+  animation-direction: alternate;
+}
+
+.h1::before {
+  animation-delay: .1s;
+}
+
+.button {
+  width: 150px;
+  height: 35px;
+  border: none;
+  border-radius: 7px;
+  background: rgb(142, 12, 83);
+  font-size: 25px;
+
+}
+
+h1 {
+  font-size: 30px;
+}
+
+
+@media (width < 1024px) {
+  .road {
+    width: 450px;
+  }
+
+  .buttons {
+    width: 215px;
+    height: 105px;
+
+  }
+
+  .game-button {
+    top: 45%;
+  }
+
+  .game-button:hover {
+    transform: scale(1);
+  }
+
+  .tree1 {
+    transform: translate(-245px, -15vh);
+  }
+
+  .tree2 {
+    transform: translate(-270px, 30vh);
+  }
+}
+
+@media (width < 704px) {
+  .car {
+    width: 50px;
+    height: 100px;
+  }
+
+  .arrow {
+    width: 50px;
+  }
+
+  .danger {
+    width: 65px;
+  }
+
+  .road {
+    width: 250px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 275px;
+    align-items: center;
+    height: 56px;
+    top: 2%;
+    padding: 5px;
+  }
+
+  .game-score {
+    align-self: center;
+    width: 50px;
+    border-radius: 4px;
+  }
+
+  .game-button {
+    align-self: center;
+    position: initial;
+  }
+
+  .score {
+    align-items: end;
+    display: flex;
+  }
+
+  .score p {
+    align-self: end;
+  }
+
+  .play,
+  .pause {
+    width: 60px;
+    height: auto;
+  }
+
+  .tree {
+    width: 150px;
+  }
+
+  .tree1 {
+    transform: translate(-144px, -15vh);
+  }
+
+  .tree2 {
+    transform: translate(-160px, 30vh);
+  }
+
+  .tree3 {
+    transform: translate(-180px, 70vh);
+  }
+
+  .tree4 {
+    transform: translate(180px, -5vh);
+  }
+
+  .tree5 {
+    transform: translate(140px, 40vh);
+  }
+
+  .tree6 {
+    transform: translate(170px, 80vh);
+  }
+
+  .coin{
+    width: 40px;
+  }
+  .arrow{
+    width: 40px;
+    height: 50px;
+  }
+
+
+}
+
+@media (width < 404px) {
+  .road {
+    width: 200px;
+  }
+
+  .line {
+    width: 10px;
+    height: 80px;
+  }
+
+  .box {
+    padding: 10px;
+    row-gap: 40px;
+    width: 325px;
+    height: 190px;
+  }
+
+  .car {
+    transform: translateY(60vh);
+  }
+}
